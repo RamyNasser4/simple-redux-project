@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { updateEmail, updateName } from '../../Redux/userSlice';
-import { addUser } from '../../Redux/api';
+import { addUser } from '../../Redux/userSlice';
 
 export default function Form() {
     const [name,setName] = useState("");
@@ -10,7 +10,7 @@ export default function Form() {
     const {loading,error,errorMessage} = useSelector(state => state.user);
     console.log(errorMessage);
     const handleSubmit = (name,email) =>{
-        addUser({name,email},dispatch);
+        dispatch(addUser({name,email}));
     }
   return (
     <form onSubmit={(e) =>{
