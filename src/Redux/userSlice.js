@@ -43,7 +43,6 @@ export const userSlice = createSlice({
             state.loading = true;
         },
         [addUser.fulfilled] : (state,action) =>{
-            console.log(action.payload);
             state.userData = action.payload.user;
             state.loading = false;
             state.error = false;
