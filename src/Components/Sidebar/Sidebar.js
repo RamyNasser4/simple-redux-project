@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 export default function Sidebar() {
-    const name = useSelector(state =>state.user.name)
+    const name = useSelector(state =>state.user.userData.name);
   return (
     <div className='w-1/4 bg-[#f6f6f6] h-[calc(100vh-72px)] p-3'>
         <ul className='list-none'>
